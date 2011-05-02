@@ -1,0 +1,20 @@
+Header set Expires "Thu, 19 Nov 1981 08:52:00 GM"
+Header set Cache-Control "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+Header set Pragma "no-cache"
+
+<Files spincycle.py>
+  SetHandler wsgi-script
+  Options ExecCGI FollowSymLinks
+</Files>
+
+<IfModule mod_rewrite.c>      
+  RewriteEngine on
+  RewriteBase /
+  RewriteCond %{REQUEST_URI} !^/script
+  RewriteCond %{REQUEST_URI} !^/graphics
+  RewriteCond %{REQUEST_URI} !^/flash  
+  RewriteCond %{REQUEST_URI} !^/css
+  RewriteCond %{REQUEST_URI} !^/favicon.ico$
+ 	RewriteCond %{REQUEST_URI} !^(/.*)+spincycle.py/
+  RewriteRule ^(.*)$ spincycle.py/$1 [PT]
+</IfModule>

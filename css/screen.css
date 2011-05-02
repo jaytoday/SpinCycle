@@ -1,0 +1,35 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #294642;								
+}
+
+div#background, div#spincycle {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #294642;
+}
+
+div#spincycle a {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -16px 0 0 -56px;
+	background: #294642;	
+}
+
+div#stage {
+	position:absolute;
+	width: 1390px;
+	height: 622px;
+	left: 50%;
+	top: 50%;
+	margin: -317px 0px 0px -701px;
+	background: black;
+	border: 6px solid #688f83;
+}
